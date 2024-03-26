@@ -69,14 +69,14 @@ abstract class Retriever implements RetrieverInterface
             case 'search':
                 $query->where(function ($query) use ($column, $value) {
                     foreach ($column as $key => $column) {
-                        $query->orWhere($column, 'like', '%' . $value . '%');
+                        $query->orWhere($column, 'ilike', '%' . $value . '%');
                     }
                 });
                 break;
             case 'q':
                 $query->where(function ($query) use ($column, $value) {
                     foreach ($column as $key => $column) {
-                        $query->orWhere($column, 'like', '%' . $value . '%');
+                        $query->orWhere($column, 'ilike', '%' . $value . '%');
                     }
                 });
                 break;
